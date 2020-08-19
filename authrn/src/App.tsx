@@ -3,13 +3,20 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 // import { Container } from './styles';
 import Routes from './routes';
+import {AuthProvider} from './contexts/auth';
+
 
 const App: React.FC = () => {
-  return (
+    
+    return (
+        
         <NavigationContainer>
-            <Routes />
+            <AuthProvider>
+                <Routes />
+            </AuthProvider>
         </NavigationContainer>
-    );
+
+        );
 };
 
 export default App;
